@@ -2,9 +2,7 @@ package leetcode;
 
 public class PriceCount {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	public void run() {
 		System.out.println(divide(-2147483648, -1));
 
 	}

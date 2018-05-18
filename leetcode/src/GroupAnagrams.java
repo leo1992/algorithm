@@ -1,13 +1,11 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GroupAnagrams {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void run() {
 		String[] strs = {"eat","tea","tan","ate","nat","bat"};
 		List<List<String>> result = groupAnagrams(strs);
 		for (List<String> group : result) {
