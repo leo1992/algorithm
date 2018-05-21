@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhangying on 5/17/18.
+ * Created by zhangying on 5/18/18.
  */
-public class Permutations {
+public class PermutationsAdvanced {
     private List<List<Integer>> result = new ArrayList<>();
 
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permuteUnique(int[] nums) {
         int length = nums.length;
         if (length == 0) return result;
         if (length == 1) {
@@ -16,12 +16,12 @@ public class Permutations {
             result.add(temp);
             return result;
         }
-        permuteRecursion(nums, 0);
+        new Sort().sort(nums);
+        permuteRecursion(nums, 0, new boolean[length]);
         return result;
     }
 
-
-    public void permuteRecursion(int[] nums, int curPos) {
+    public void permuteRecursion(int[] nums, int curPos, boolean[] used) {
         if (curPos >= nums.length) return;
         if (curPos == nums.length - 1) {
             addToList(nums);
@@ -29,8 +29,16 @@ public class Permutations {
         }
 
         for (int i = curPos; i < nums.length; i++) {
+            if (used[i]) {
+                continue;
+            }
+            if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1]) {
+                continue;
+            }
+            used[i] = true;
             swap(nums, curPos, i);
-            permuteRecursion(nums, curPos + 1);
+            permuteRecursion(nums, curPos + 1, used);
+            used[i] = false;
             swap(nums, curPos, i);
         }
     }
