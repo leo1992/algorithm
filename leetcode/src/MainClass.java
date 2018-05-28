@@ -8,7 +8,8 @@ public class MainClass {
     public static void main(String[] args) {
 //        testPermutations();
 //        testPermutaionsAdvanced();
-        testDivide();
+//        testDivide();
+        testFindRange();
     }
 
     public static void testRoman() {
@@ -51,8 +52,16 @@ public class MainClass {
         System.out.println("devidend: " + devidend + " divisor: " + divisor);
         System.out.println("result: " + new Divide().divide(devidend, divisor));
         if (devidend != 0 && divisor != 0) {
-            System.out.println("systemResult: " + (devidend/divisor));
+            System.out.println("systemResult: " + (devidend / divisor));
         }
+    }
+
+    public static void testFindRange() {
+        int[] data = {1};
+        int target = 1;
+        int[] result = new FindRange().searchRange(data, target);
+        System.out.println("result: " + result[0] + " , " + result[1]);
+
     }
 
 }
