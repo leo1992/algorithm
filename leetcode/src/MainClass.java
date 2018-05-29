@@ -9,7 +9,8 @@ public class MainClass {
 //        testPermutations();
 //        testPermutaionsAdvanced();
 //        testDivide();
-        testFindRange();
+//        testFindRange();
+        testCombinationSum();
     }
 
     public static void testRoman() {
@@ -62,6 +63,13 @@ public class MainClass {
         int[] result = new FindRange().searchRange(data, target);
         System.out.println("result: " + result[0] + " , " + result[1]);
 
+    }
+
+    public static void testCombinationSum() {
+        int[] data = {2,3,6,7};
+        int target = 7;
+        List<List<Integer>> result = new CombinationSum().combinationSum(data, target);
+        new PrintUtils<Integer>().print(result);
     }
 
 }
