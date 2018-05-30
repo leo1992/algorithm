@@ -10,7 +10,8 @@ public class MainClass {
 //        testPermutaionsAdvanced();
 //        testDivide();
 //        testFindRange();
-        testCombinationSum();
+//        testCombinationSum();
+        testCombinationSum2();
     }
 
     public static void testRoman() {
@@ -66,9 +67,16 @@ public class MainClass {
     }
 
     public static void testCombinationSum() {
-        int[] data = {2,3,6,7};
+        int[] data = {2, 3, 6, 7};
         int target = 7;
         List<List<Integer>> result = new CombinationSum().combinationSum(data, target);
+        new PrintUtils<Integer>().print(result);
+    }
+
+    public static void testCombinationSum2() {
+        int[] data = {2,5,2,1,2};
+        int target = 5;
+        List<List<Integer>> result = new CombinationSum2().combinationSum2Best(data, target);
         new PrintUtils<Integer>().print(result);
     }
 
