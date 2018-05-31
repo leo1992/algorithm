@@ -11,7 +11,8 @@ public class MainClass {
 //        testDivide();
 //        testFindRange();
 //        testCombinationSum();
-        testCombinationSum2();
+//        testCombinationSum2();
+        testRotate();
     }
 
     public static void testRoman() {
@@ -74,10 +75,33 @@ public class MainClass {
     }
 
     public static void testCombinationSum2() {
-        int[] data = {2,5,2,1,2};
+        int[] data = {2, 5, 2, 1, 2};
         int target = 5;
         List<List<Integer>> result = new CombinationSum2().combinationSum2Best(data, target);
         new PrintUtils<Integer>().print(result);
+    }
+
+    public static void testRotate() {
+//        int[][] matrix = {{1, 2, 3,}, {4, 5, 6,}, {7, 8, 9}};
+//        int [][] matrix = {{1,2,},{3,4}};
+//        int[][] matrix = {{1, 2, 3, 4},
+//                {5, 6, 7, 8},
+//                {9, 10, 11, 12},
+//                {13, 14, 15, 16}};
+        int[][] matrix = generateMatrix(6);
+        new PrintUtils().print(matrix);
+        new Rotate().rotateOpt(matrix);
+        new PrintUtils().print(matrix);
+    }
+
+    private static int[][] generateMatrix(int row) {
+        int[][] matrix = new int[row][row];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < row; j++) {
+                matrix[i][j] = (i * row + j + 1);
+            }
+        }
+        return matrix;
     }
 
 }
