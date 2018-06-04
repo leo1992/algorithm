@@ -1,3 +1,5 @@
+import org.w3c.dom.NodeList;
+
 import java.util.List;
 
 /**
@@ -12,7 +14,9 @@ public class MainClass {
 //        testFindRange();
 //        testCombinationSum();
 //        testCombinationSum2();
-        testRotate();
+//        testRotate();
+//        testRegularMatching();
+        testMergeKList();
     }
 
     public static void testRoman() {
@@ -102,6 +106,65 @@ public class MainClass {
             }
         }
         return matrix;
+    }
+
+    public static void testRegularMatching() {
+        String s = "ab";
+        String p = ".*";
+        System.out.println("s: " + s);
+        System.out.println("p: " + p);
+        System.out.println("result: " + new ExpressionMatching().isMatch(s, p));
+    }
+
+    public static void testMergeKList() {
+//        int[][] data = {{1, 4, 5},
+//                {1, 3, 4},
+//                {2, 6}};
+//        int[][] data = {{-10,-9,-9,-3,-1,-1,0},{-5},{4},{-8},{},{-9,-6,-5,-4,-2,2,3},{-3,-3,-2,-1,0}};
+        int[][] data ={{1,4,5},{1,3,4},{2,6}};
+        MergetKLists.ListNode[] list = buildNodeListArray(data);
+        printNodeListArray(list);
+        printList(new MergetKLists().mergeKListsOpt(list));
+    }
+
+    private static MergetKLists.ListNode[] buildNodeListArray(int[][] data) {
+        int length = data.length;
+        MergetKLists.ListNode[] resultList = new MergetKLists.ListNode[length];
+        MergetKLists.ListNode[] tempArray = new MergetKLists.ListNode[length];
+        for (int i = 0; i < length; i++) {
+            int iLength = data[i].length;
+            if (iLength <= 0) {
+                resultList[i] = null;
+                continue;
+            }
+            resultList[i] = new MergetKLists.ListNode(data[i][0]);
+            tempArray[i] = resultList[i];
+            for (int j = 1; j < iLength; j++) {
+                tempArray[i].next = new MergetKLists.ListNode(data[i][j]);
+                tempArray[i] = tempArray[i].next;
+            }
+        }
+        return resultList;
+    }
+
+    private static void printNodeListArray(MergetKLists.ListNode[] array) {
+        int length = array.length;
+        for (int i = 0; i < length; i++) {
+            printList(array[i]);
+        }
+    }
+
+    private static void printList(MergetKLists.ListNode head) {
+        MergetKLists.ListNode temp = head;
+        if (temp == null) {
+            System.out.println("[]");
+            return;
+        }
+        while (temp.next != null) {
+            System.out.print(temp.val + " -> ");
+            temp = temp.next;
+        }
+        System.out.println(temp.val);
     }
 
 }
