@@ -39,4 +39,17 @@ public class PrintUtils<T> {
         System.out.println("]");
     }
 
+    public static void printList(ListNode head) {
+        ListNode temp = head;
+        if (temp == null) {
+            System.out.println("[]");
+            return;
+        }
+        while (temp.next != null) {
+            System.out.print(temp.val + " -> ");
+            temp = temp.next;
+        }
+        System.out.println(temp.val);
+    }
+
 }

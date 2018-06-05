@@ -16,7 +16,8 @@ public class MainClass {
 //        testCombinationSum2();
 //        testRotate();
 //        testRegularMatching();
-        testMergeKList();
+//        testMergeKList();
+        testReverseKGroup();
     }
 
     public static void testRoman() {
@@ -121,41 +122,41 @@ public class MainClass {
 //                {1, 3, 4},
 //                {2, 6}};
 //        int[][] data = {{-10,-9,-9,-3,-1,-1,0},{-5},{4},{-8},{},{-9,-6,-5,-4,-2,2,3},{-3,-3,-2,-1,0}};
-        int[][] data ={{1,4,5},{1,3,4},{2,6}};
-        MergetKLists.ListNode[] list = buildNodeListArray(data);
+        int[][] data = {{1, 4, 5}, {1, 3, 4}, {2, 6}};
+        ListNode[] list = buildNodeListArray(data);
         printNodeListArray(list);
         printList(new MergetKLists().mergeKListsOpt(list));
     }
 
-    private static MergetKLists.ListNode[] buildNodeListArray(int[][] data) {
+    private static ListNode[] buildNodeListArray(int[][] data) {
         int length = data.length;
-        MergetKLists.ListNode[] resultList = new MergetKLists.ListNode[length];
-        MergetKLists.ListNode[] tempArray = new MergetKLists.ListNode[length];
+        ListNode[] resultList = new ListNode[length];
+        ListNode[] tempArray = new ListNode[length];
         for (int i = 0; i < length; i++) {
             int iLength = data[i].length;
             if (iLength <= 0) {
                 resultList[i] = null;
                 continue;
             }
-            resultList[i] = new MergetKLists.ListNode(data[i][0]);
+            resultList[i] = new ListNode(data[i][0]);
             tempArray[i] = resultList[i];
             for (int j = 1; j < iLength; j++) {
-                tempArray[i].next = new MergetKLists.ListNode(data[i][j]);
+                tempArray[i].next = new ListNode(data[i][j]);
                 tempArray[i] = tempArray[i].next;
             }
         }
         return resultList;
     }
 
-    private static void printNodeListArray(MergetKLists.ListNode[] array) {
+    private static void printNodeListArray(ListNode[] array) {
         int length = array.length;
         for (int i = 0; i < length; i++) {
             printList(array[i]);
         }
     }
 
-    private static void printList(MergetKLists.ListNode head) {
-        MergetKLists.ListNode temp = head;
+    private static void printList(ListNode head) {
+        ListNode temp = head;
         if (temp == null) {
             System.out.println("[]");
             return;
@@ -165,6 +166,25 @@ public class MainClass {
             temp = temp.next;
         }
         System.out.println(temp.val);
+    }
+
+    public static void testReverseKGroup() {
+        int[] data = {1};
+        ListNode head = buildNodeList(data);
+        printList(head);
+        printList(new ReverseKGroup().reverseKGroup(head, 3));
+    }
+
+    private static ListNode buildNodeList(int[] data) {
+        int length = data.length;
+        if (length <= 0) return null;
+        ListNode head = new ListNode(data[0]);
+        ListNode temp = head;
+        for (int i = 1; i < length; i++) {
+            temp.next = new ListNode(data[i]);
+            temp = temp.next;
+        }
+        return head;
     }
 
 }
