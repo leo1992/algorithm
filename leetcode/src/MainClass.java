@@ -17,7 +17,9 @@ public class MainClass {
 //        testRotate();
 //        testRegularMatching();
 //        testMergeKList();
-        testReverseKGroup();
+//        testReverseKGroup();
+//        testFindSubstring();
+        testLongestValidParentheses();
     }
 
     public static void testRoman() {
@@ -185,6 +187,20 @@ public class MainClass {
             temp = temp.next;
         }
         return head;
+    }
+
+//    private static void testFindSubstring() {
+//        String s = "barfoothefoobarman";
+//        String[] words = {"bar", "foo"};
+//        new FindSubstring().findSubstring(s, words);
+//    }
+
+    private static void testLongestValidParentheses() {
+        String s = ")()";
+        int len = new LongestValidParentheses().longestValidParenthesesOpt(s);
+        int lenRight = new LongestValidParentheses().longestValidParentheses(s);
+        System.out.println("s: " + s + "  len: " + len + "  lenRight: " + lenRight);
+
     }
 
 }
