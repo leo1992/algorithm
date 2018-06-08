@@ -22,7 +22,8 @@ public class MainClass {
 //        testLongestValidParentheses();
 //        testSudok();
 //        testFirstMissingPositiveNumber();
-        testRainWater();
+//        testRainWater();
+        testJumpGame2();
     }
 
     public static void testRoman() {
@@ -249,6 +250,15 @@ public class MainClass {
         printUtils.print(height);
         int result = new RainWater().trap(height);
         System.out.println("result: " + result);
+    }
+
+    private static void testJumpGame2() {
+        int[] data = {1,2,3};
+        PrintUtils printUtils = new PrintUtils();
+        printUtils.print(data);
+        int result = new JumpGame2().jump(data);
+        System.out.println("result: " + result);
+
     }
 
 }
