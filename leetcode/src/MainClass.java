@@ -20,7 +20,9 @@ public class MainClass {
 //        testReverseKGroup();
 //        testFindSubstring();
 //        testLongestValidParentheses();
-        testSudok();
+//        testSudok();
+//        testFirstMissingPositiveNumber();
+        testRainWater();
     }
 
     public static void testRoman() {
@@ -219,18 +221,34 @@ public class MainClass {
 //                        {'.','.','.', '4','1','9', '.','.','5'},
 //                        {'.','.','.', '.','8','.', '.','7','9'}};
         char[][] data = {
-                {'.','.','9','7','4','8','.','.','.'},
-                {'7','.','.','.','.','.','.','.','.'},
-                {'.','2','.','1','.','9','.','.','.'},
-                {'.','.','7','.','.','.','2','4','.'},
-                {'.','6','4','.','1','.','5','9','.'},
-                {'.','9','8','.','.','.','3','.','.'},
-                {'.','.','.','8','.','3','.','2','.'},
-                {'.','.','.','.','.','.','.','.','6'},
-                {'.','.','.','2','7','5','9','.','.'}};
+                {'.', '.', '9', '7', '4', '8', '.', '.', '.'},
+                {'7', '.', '.', '.', '.', '.', '.', '.', '.'},
+                {'.', '2', '.', '1', '.', '9', '.', '.', '.'},
+                {'.', '.', '7', '.', '.', '.', '2', '4', '.'},
+                {'.', '6', '4', '.', '1', '.', '5', '9', '.'},
+                {'.', '9', '8', '.', '.', '.', '3', '.', '.'},
+                {'.', '.', '.', '8', '.', '3', '.', '2', '.'},
+                {'.', '.', '.', '.', '.', '.', '.', '.', '6'},
+                {'.', '.', '.', '2', '7', '5', '9', '.', '.'}};
         printUtils.print(data);
         new Sudok().solveSudoku(data);
         printUtils.print(data);
+    }
+
+    private static void testFirstMissingPositiveNumber() {
+        int[] nums = {1, 1};
+        PrintUtils printUtils = new PrintUtils();
+        printUtils.print(nums);
+        int result = new MissingPositiveNumber().firstMissingPositive(nums);
+        System.out.println("result: " + result);
+    }
+
+    private static void testRainWater() {
+        int[] height = {4,2,3};
+        PrintUtils printUtils = new PrintUtils();
+        printUtils.print(height);
+        int result = new RainWater().trap(height);
+        System.out.println("result: " + result);
     }
 
 }
