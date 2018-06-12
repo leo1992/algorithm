@@ -23,7 +23,9 @@ public class MainClass {
 //        testSudok();
 //        testFirstMissingPositiveNumber();
 //        testRainWater();
-        testJumpGame2();
+//        testJumpGame2();
+//        testultiplyString();
+        testWildVardMatching();
     }
 
     public static void testRoman() {
@@ -259,6 +261,29 @@ public class MainClass {
         int result = new JumpGame2().jump(data);
         System.out.println("result: " + result);
 
+    }
+
+    private static void testultiplyString() {
+        new MultiplyString().multiply("123", "456");
+    }
+
+    private static void testWildVardMatching() {
+//        String s = "aa";
+//        String p = "*";
+
+//        String s = "acdcb";
+//        String p = "a*c?b";
+//        String s = "mississippi";
+//        String p = "m??*ss*?i*pi";
+        String s = "adceb";
+        String p = "*a*b";
+//        String s = "aaabbbaabaaaaababaabaaabbabbbbbbbbaabababbabbbaaaabaa";
+//        String p = "a*******ba";
+//        String s = "babbbbaabababaabbababaababaabbaabababbaaababbababaaaaaabbabaaaabababbabbababbbaaaababbbabbbbbbbbbbaabbb";
+//        String p = "b**bb**a**bba*b**a*bbb**aba***babbb*aa****aabb*bbb***a";
+        System.out.println("s: " + s);
+        System.out.println("p: " + p);
+        System.out.println("result: " + new WildcardMatching().isMatch(s, p));
     }
 
 }
