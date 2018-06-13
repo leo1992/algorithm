@@ -14,6 +14,12 @@ public class PrintUtils<T> {
         }
     }
 
+    public void printList(List<T> result) {
+        for (T item : result) {
+            System.out.print(item.toString() + " , ");
+        }
+    }
+
     public void print(int[][] data) {
         int row = data.length;
         int column = data[0].length;

@@ -18,14 +18,14 @@ public class MainClass {
 //        testRegularMatching();
 //        testMergeKList();
 //        testReverseKGroup();
-//        testFindSubstring();
+        testFindSubstring();
 //        testLongestValidParentheses();
 //        testSudok();
 //        testFirstMissingPositiveNumber();
 //        testRainWater();
 //        testJumpGame2();
 //        testultiplyString();
-        testWildVardMatching();
+//        testWildVardMatching();
     }
 
     public static void testRoman() {
@@ -195,11 +195,21 @@ public class MainClass {
         return head;
     }
 
-//    private static void testFindSubstring() {
-//        String s = "barfoothefoobarman";
-//        String[] words = {"bar", "foo"};
-//        new FindSubstring().findSubstring(s, words);
-//    }
+    private static void testFindSubstring() {
+        String s = "barfoothefoobarman";
+        String[] words = {"bar", "foo"};
+//        String s = "wordgoodstudentgoodword";
+//        String[] words = {"word","student"};
+//        String s = "wordgoodgoodgoodbestword";
+//        String[] words = {"word","good","best","good"};
+//        String s = "aaa";
+//        String[] words = {"a","b"};
+
+        List<Integer> result = new FindSubstring().findSubstring(s, words);
+        new PrintUtils<Integer>().printList(result);
+    }
+
+
 
     private static void testLongestValidParentheses() {
         String s = ")()";
