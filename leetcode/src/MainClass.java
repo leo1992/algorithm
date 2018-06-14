@@ -18,7 +18,7 @@ public class MainClass {
 //        testRegularMatching();
 //        testMergeKList();
 //        testReverseKGroup();
-        testFindSubstring();
+//        testFindSubstring();
 //        testLongestValidParentheses();
 //        testSudok();
 //        testFirstMissingPositiveNumber();
@@ -26,6 +26,9 @@ public class MainClass {
 //        testJumpGame2();
 //        testultiplyString();
 //        testWildVardMatching();
+//        testNQueue();
+        testNQueue2();
+
     }
 
     public static void testRoman() {
@@ -294,6 +297,18 @@ public class MainClass {
         System.out.println("s: " + s);
         System.out.println("p: " + p);
         System.out.println("result: " + new WildcardMatching().isMatch(s, p));
+    }
+
+    private static void testNQueue() {
+        List<List<String>> result = new NQueen().solveNQueens(5);
+        new PrintUtils<>().printStringListList(result);
+    }
+
+    private static void testNQueue2() {
+        int result = new NQueue2().totalNQueens(5);
+        System.out.println("result: " +result);
+        List<List<String>> resultList = new NQueen().solveNQueens(5);
+        new PrintUtils<>().printStringListList(resultList);
     }
 
 }

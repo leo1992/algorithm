@@ -20,6 +20,15 @@ public class PrintUtils<T> {
         }
     }
 
+    public void printStringListList(List<List<String>> result) {
+        for (List<String> itemList : result) {
+            for (String item : itemList) {
+                System.out.println(item + " , ");
+            }
+            System.out.println();
+        }
+    }
+
     public void print(int[][] data) {
         int row = data.length;
         int column = data[0].length;
