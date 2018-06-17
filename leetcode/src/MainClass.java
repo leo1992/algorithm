@@ -29,7 +29,8 @@ public class MainClass {
 //        testNQueue();
 //        testNQueue2();
 //        testSpiral();
-        testJummGame();
+//        testJummGame();
+        testMergeInterval();
 
     }
 
@@ -331,6 +332,10 @@ public class MainClass {
         new PrintUtils().print(nums);
         boolean result = new JumpGame().canJump(nums);
         System.out.println("result: " + result);
+    }
+
+    private static void testMergeInterval() {
+        new MergeIntervals().test();
     }
 
 }
