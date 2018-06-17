@@ -27,7 +27,9 @@ public class MainClass {
 //        testultiplyString();
 //        testWildVardMatching();
 //        testNQueue();
-        testNQueue2();
+//        testNQueue2();
+//        testSpiral();
+        testJummGame();
 
     }
 
@@ -213,7 +215,6 @@ public class MainClass {
     }
 
 
-
     private static void testLongestValidParentheses() {
         String s = ")()";
         int len = new LongestValidParentheses().longestValidParenthesesOpt(s);
@@ -260,7 +261,7 @@ public class MainClass {
     }
 
     private static void testRainWater() {
-        int[] height = {4,2,3};
+        int[] height = {4, 2, 3};
         PrintUtils printUtils = new PrintUtils();
         printUtils.print(height);
         int result = new RainWater().trap(height);
@@ -268,7 +269,7 @@ public class MainClass {
     }
 
     private static void testJumpGame2() {
-        int[] data = {1,2,3};
+        int[] data = {1, 2, 3};
         PrintUtils printUtils = new PrintUtils();
         printUtils.print(data);
         int result = new JumpGame2().jump(data);
@@ -306,9 +307,30 @@ public class MainClass {
 
     private static void testNQueue2() {
         int result = new NQueue2().totalNQueens(5);
-        System.out.println("result: " +result);
+        System.out.println("result: " + result);
         List<List<String>> resultList = new NQueen().solveNQueens(5);
         new PrintUtils<>().printStringListList(resultList);
+    }
+
+    private static void testSpiral() {
+        new Spiral().spiralOrder(generateMatrix(3, 6));
+    }
+
+    private static int[][] generateMatrix(int row, int column) {
+        int[][] matrix = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                matrix[i][j] = (i * column + j + 1);
+            }
+        }
+        return matrix;
+    }
+
+    private static void testJummGame() {
+        int[] nums = {3,2,1,0,4};
+        new PrintUtils().print(nums);
+        boolean result = new JumpGame().canJump(nums);
+        System.out.println("result: " + result);
     }
 
 }
