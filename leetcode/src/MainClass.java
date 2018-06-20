@@ -30,7 +30,10 @@ public class MainClass {
 //        testNQueue2();
 //        testSpiral();
 //        testJummGame();
-        testMergeInterval();
+//        testMergeInterval();
+//        testSpiralMatrix2();
+//        testInsertInterval();
+        testPermutaionSequence();
 
     }
 
@@ -338,4 +341,15 @@ public class MainClass {
         new MergeIntervals().test();
     }
 
+    private static void testSpiralMatrix2() {
+        int[][] result = new SpiralMatrix2().generateMatrix(0);
+        new PrintUtils().print(result);
+    }
+
+    private static void testInsertInterval() {
+        new InsertInterval().test();
+    }
+    private static void testPermutaionSequence() {
+        System.out.println(new PermutationSequence().getPermutation(4,4));
+    }
 }
