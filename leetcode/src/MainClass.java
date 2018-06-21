@@ -33,7 +33,9 @@ public class MainClass {
 //        testMergeInterval();
 //        testSpiralMatrix2();
 //        testInsertInterval();
-        testPermutaionSequence();
+//        testPermutaionSequence();
+//        testUniquePaths();
+        testUniquePaths2();
 
     }
 
@@ -351,5 +353,19 @@ public class MainClass {
     }
     private static void testPermutaionSequence() {
         System.out.println(new PermutationSequence().getPermutation(4,4));
+    }
+
+    private static void testUniquePaths() {
+        int result = new UniquePaths().uniquePaths(3,2);
+        System.out.println(result);
+    }
+
+    private static void testUniquePaths2() {
+        int[][] obstacleGrid = {
+                {0,0,0},
+                {0,1,0},
+                {0,0,0}};
+        int result = new UniquePaths2().uniquePathsWithObstacles(obstacleGrid);
+        System.out.println(result);
     }
 }
