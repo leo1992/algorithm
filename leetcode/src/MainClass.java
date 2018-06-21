@@ -35,7 +35,8 @@ public class MainClass {
 //        testInsertInterval();
 //        testPermutaionSequence();
 //        testUniquePaths();
-        testUniquePaths2();
+//        testUniquePaths2();
+        testPathSum();
 
     }
 
@@ -367,5 +368,15 @@ public class MainClass {
                 {0,0,0}};
         int result = new UniquePaths2().uniquePathsWithObstacles(obstacleGrid);
         System.out.println(result);
+    }
+
+    private static void testPathSum() {
+        int[][] grid = {
+                {1,3,1},
+                {1,5,1},
+                {4,2,1}};
+        int result = new PathSum().minPathSum(grid);
+        System.out.println(result);
+
     }
 }
