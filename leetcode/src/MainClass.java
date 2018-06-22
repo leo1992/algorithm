@@ -36,7 +36,9 @@ public class MainClass {
 //        testPermutaionSequence();
 //        testUniquePaths();
 //        testUniquePaths2();
-        testPathSum();
+//        testPathSum();
+//        testIsNumber();
+        testTextJustification();
 
     }
 
@@ -379,4 +381,30 @@ public class MainClass {
         System.out.println(result);
 
     }
+
+    private static void testIsNumber() {
+        System.out.println(new IsNumber().isNumber("3.."));
+    }
+
+    private static void testTextJustification() {
+        PrintUtils printUtils = new PrintUtils<String>();
+//        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+//        String[] words = {"What","must","be","acknowledgment","shall","be"};
+//        String[] words = {"Science","is","what","we","understand","well","enough","to","explain",
+//                "to","a","computer.","Art","is","everything","else","we","do"};
+        String[] words = {"What","must","be","acknowledgment","shall","be"};
+        int maxWidth = 16;
+        printUtils.printArray(words);
+        System.out.println();
+        List<String> result = new TextJustification().fullJustify(words, maxWidth);
+        printUtils.printStringList(result);
+    }
+
+//    private static void testSimplifyPath() {
+//        String path =
+//                ""
+//                ;
+//        System.out.println(new SimplifyPath().simplifyPath(path));
+//    }
+
 }

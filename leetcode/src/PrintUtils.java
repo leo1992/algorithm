@@ -20,6 +20,18 @@ public class PrintUtils<T> {
         }
     }
 
+    public void printStringList(List<String> result) {
+        for (String item : result) {
+            System.out.println(item.toString() + ",");
+        }
+    }
+
+    public void printArray(T[] result) {
+        for (T item : result) {
+            System.out.print(item.toString() + " , ");
+        }
+    }
+
     public void printStringListList(List<List<String>> result) {
         for (List<String> itemList : result) {
             for (String item : itemList) {
