@@ -38,7 +38,9 @@ public class MainClass {
 //        testUniquePaths2();
 //        testPathSum();
 //        testIsNumber();
-        testTextJustification();
+//        testTextJustification();
+//        testSimplifyPath();
+        testMinDistance();
 
     }
 
@@ -400,11 +402,25 @@ public class MainClass {
         printUtils.printStringList(result);
     }
 
-//    private static void testSimplifyPath() {
-//        String path =
-//                ""
-//                ;
-//        System.out.println(new SimplifyPath().simplifyPath(path));
-//    }
+
+    private static void testSimplifyPath() {
+        String path =
+//                "/a/./b/../../c/"
+//                "/home/"
+//                "/../"
+                "/home//foo/"
+                ;
+        System.out.println(new SimplifyPath().simplifyPath(path));
+    }
+
+    private static void testMinDistance() {
+        String[] words =
+                {
+                        "intention", "execution"
+//                        "horse", "ros"
+                }
+                ;
+        System.out.println(new MinDistance().minDistance(words[0], words[1]));
+    }
 
 }
