@@ -40,8 +40,11 @@ public class MainClass {
 //        testIsNumber();
 //        testTextJustification();
 //        testSimplifyPath();
-        testMinDistance();
-
+//        testMinDistance();
+//        testSort();
+//        testSearchMatrix();
+//        testSortColor();
+        testMinWindow();
     }
 
     public static void testRoman() {
@@ -421,6 +424,51 @@ public class MainClass {
                 }
                 ;
         System.out.println(new MinDistance().minDistance(words[0], words[1]));
+    }
+
+    private static void testSort() {
+        int[] data =
+                {
+                    // 3,1,4,6,2,4,15,8
+                        5, 2, 9, 4, 7, 6, 1, 3, 8
+                }
+                ;
+        Sort sort = new Sort();
+//        sort.insertSort(data);
+//        sort.selectSort(data);
+//        sort.bubbleSort(data);
+//        sort.mergeSort(data, 0, data.length - 1);
+        sort.heapSort(data);
+        new PrintUtils().print(data);
+    }
+
+    private static void testSearchMatrix() {
+        int [][] data = {
+                {1,  3,  5,  7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 50}
+        };
+        System.out.println(new SearchMatrix().searchMatrix(data, 10));
+    }
+
+    private static void testSortColor() {
+//        int[] data = {2,0,2,1,1,0,1,1,2,0,0,1};
+        int[] data = {1,0};
+
+        new SortColors().sortColors(data);
+        new PrintUtils().print(data);
+    }
+
+    private static void testMinWindow() {
+        String[] s = {
+//                "ADOBECODEBANC", "ABC"
+//                "a", "a"
+//                "a", "b"
+//                "ab", "b"
+//                "bba", "ab"
+                "abcabdebac", "cda"
+        };
+        System.out.print(new MinWindow().minWindowArray(s[0], s[1]));
     }
 
 }
