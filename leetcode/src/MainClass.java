@@ -44,7 +44,8 @@ public class MainClass {
 //        testSort();
 //        testSearchMatrix();
 //        testSortColor();
-        testMinWindow();
+//        testMinWindow();
+        testCombination();
     }
 
     public static void testRoman() {
@@ -469,6 +470,11 @@ public class MainClass {
                 "abcabdebac", "cda"
         };
         System.out.print(new MinWindow().minWindowArray(s[0], s[1]));
+    }
+
+    private static void testCombination() {
+        List<List<Integer>> result = new Combinations().combine(4,3);
+        new PrintUtils<Integer>().print(result);
     }
 
 }
