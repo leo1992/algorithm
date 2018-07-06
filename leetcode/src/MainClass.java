@@ -46,7 +46,8 @@ public class MainClass {
 //        testSortColor();
 //        testMinWindow();
 //        testCombination();
-        testSubsets();
+//        testSubsets();
+        testWordSearch();
     }
 
     public static void testRoman() {
@@ -484,6 +485,16 @@ public class MainClass {
         };
         List<List<Integer>> result = new Subsets().subsets(data);
         new PrintUtils<Integer>().print(result);
+    }
+
+    private static void testWordSearch() {
+        char[][] board = {
+                {'A','B','C','E'},
+                {'S','F','C','S'},
+                {'A','D','E','E'}
+        };
+        String word = "ABCCED";
+        System.out.println(new WordSearch().exist(board, word));
     }
 
 }
