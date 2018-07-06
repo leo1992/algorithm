@@ -45,7 +45,8 @@ public class MainClass {
 //        testSearchMatrix();
 //        testSortColor();
 //        testMinWindow();
-        testCombination();
+//        testCombination();
+        testSubsets();
     }
 
     public static void testRoman() {
@@ -474,6 +475,14 @@ public class MainClass {
 
     private static void testCombination() {
         List<List<Integer>> result = new Combinations().combine(4,3);
+        new PrintUtils<Integer>().print(result);
+    }
+
+    private static void testSubsets() {
+        int data[] = {
+                1,2,3
+        };
+        List<List<Integer>> result = new Subsets().subsets(data);
         new PrintUtils<Integer>().print(result);
     }
 
