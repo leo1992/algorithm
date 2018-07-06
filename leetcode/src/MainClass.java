@@ -47,7 +47,8 @@ public class MainClass {
 //        testMinWindow();
 //        testCombination();
 //        testSubsets();
-        testWordSearch();
+//        testWordSearch();
+        testRemoveDuplicates();
     }
 
     public static void testRoman() {
@@ -495,6 +496,14 @@ public class MainClass {
         };
         String word = "ABCCED";
         System.out.println(new WordSearch().exist(board, word));
+    }
+
+    private static void testRemoveDuplicates() {
+        int[] nums = {
+//                1,1,1,2,2,3
+                0,0,1,1,1,1,2,3,3
+        };
+        System.out.print(new RemoveDuplicates().removeDuplicates(nums));
     }
 
 }
