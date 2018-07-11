@@ -48,7 +48,9 @@ public class MainClass {
 //        testCombination();
 //        testSubsets();
 //        testWordSearch();
-        testRemoveDuplicates();
+//        testRemoveDuplicates();
+//        testSearchInRotatedSortedArray();
+        testDeleteDuplicates();
     }
 
     public static void testRoman() {
@@ -504,6 +506,23 @@ public class MainClass {
                 0,0,1,1,1,1,2,3,3
         };
         System.out.print(new RemoveDuplicates().removeDuplicates(nums));
+    }
+
+    private static void testSearchInRotatedSortedArray() {
+        int[] nums = {
+                3,0,2,2,2
+        };
+        int target = -1;
+        System.out.println(new SearchInRotatedSortedArray().search(nums, target));
+    }
+
+    private static void testDeleteDuplicates() {
+        int[] data = {
+//                1,2,3,3,4,4,5
+                1,1,1,2,3
+        };
+        ListNode head = buildNodeList(data);
+        printList(new RemoveDuplicatesFromList2().deleteDuplicates(head));
     }
 
 }
