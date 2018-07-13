@@ -50,7 +50,10 @@ public class MainClass {
 //        testWordSearch();
 //        testRemoveDuplicates();
 //        testSearchInRotatedSortedArray();
-        testDeleteDuplicates();
+//        testDeleteDuplicates();
+//        testlargestRectangleArea();
+//        testmaximalRectangle();
+        testPartitionList();
     }
 
     public static void testRoman() {
@@ -347,7 +350,7 @@ public class MainClass {
     }
 
     private static void testJummGame() {
-        int[] nums = {3,2,1,0,4};
+        int[] nums = {3, 2, 1, 0, 4};
         new PrintUtils().print(nums);
         boolean result = new JumpGame().canJump(nums);
         System.out.println("result: " + result);
@@ -365,29 +368,30 @@ public class MainClass {
     private static void testInsertInterval() {
         new InsertInterval().test();
     }
+
     private static void testPermutaionSequence() {
-        System.out.println(new PermutationSequence().getPermutation(4,4));
+        System.out.println(new PermutationSequence().getPermutation(4, 4));
     }
 
     private static void testUniquePaths() {
-        int result = new UniquePaths().uniquePaths(3,2);
+        int result = new UniquePaths().uniquePaths(3, 2);
         System.out.println(result);
     }
 
     private static void testUniquePaths2() {
         int[][] obstacleGrid = {
-                {0,0,0},
-                {0,1,0},
-                {0,0,0}};
+                {0, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}};
         int result = new UniquePaths2().uniquePathsWithObstacles(obstacleGrid);
         System.out.println(result);
     }
 
     private static void testPathSum() {
         int[][] grid = {
-                {1,3,1},
-                {1,5,1},
-                {4,2,1}};
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}};
         int result = new PathSum().minPathSum(grid);
         System.out.println(result);
 
@@ -403,7 +407,7 @@ public class MainClass {
 //        String[] words = {"What","must","be","acknowledgment","shall","be"};
 //        String[] words = {"Science","is","what","we","understand","well","enough","to","explain",
 //                "to","a","computer.","Art","is","everything","else","we","do"};
-        String[] words = {"What","must","be","acknowledgment","shall","be"};
+        String[] words = {"What", "must", "be", "acknowledgment", "shall", "be"};
         int maxWidth = 16;
         printUtils.printArray(words);
         System.out.println();
@@ -417,8 +421,7 @@ public class MainClass {
 //                "/a/./b/../../c/"
 //                "/home/"
 //                "/../"
-                "/home//foo/"
-                ;
+                "/home//foo/";
         System.out.println(new SimplifyPath().simplifyPath(path));
     }
 
@@ -427,18 +430,16 @@ public class MainClass {
                 {
                         "intention", "execution"
 //                        "horse", "ros"
-                }
-                ;
+                };
         System.out.println(new MinDistance().minDistance(words[0], words[1]));
     }
 
     private static void testSort() {
         int[] data =
                 {
-                    // 3,1,4,6,2,4,15,8
+                        // 3,1,4,6,2,4,15,8
                         5, 2, 9, 4, 7, 6, 1, 3, 8
-                }
-                ;
+                };
         Sort sort = new Sort();
 //        sort.insertSort(data);
 //        sort.selectSort(data);
@@ -449,8 +450,8 @@ public class MainClass {
     }
 
     private static void testSearchMatrix() {
-        int [][] data = {
-                {1,  3,  5,  7},
+        int[][] data = {
+                {1, 3, 5, 7},
                 {10, 11, 16, 20},
                 {23, 30, 34, 50}
         };
@@ -459,7 +460,7 @@ public class MainClass {
 
     private static void testSortColor() {
 //        int[] data = {2,0,2,1,1,0,1,1,2,0,0,1};
-        int[] data = {1,0};
+        int[] data = {1, 0};
 
         new SortColors().sortColors(data);
         new PrintUtils().print(data);
@@ -478,13 +479,13 @@ public class MainClass {
     }
 
     private static void testCombination() {
-        List<List<Integer>> result = new Combinations().combine(4,3);
+        List<List<Integer>> result = new Combinations().combine(4, 3);
         new PrintUtils<Integer>().print(result);
     }
 
     private static void testSubsets() {
         int data[] = {
-                1,2,3
+                1, 2, 3
         };
         List<List<Integer>> result = new Subsets().subsets(data);
         new PrintUtils<Integer>().print(result);
@@ -492,9 +493,9 @@ public class MainClass {
 
     private static void testWordSearch() {
         char[][] board = {
-                {'A','B','C','E'},
-                {'S','F','C','S'},
-                {'A','D','E','E'}
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}
         };
         String word = "ABCCED";
         System.out.println(new WordSearch().exist(board, word));
@@ -503,14 +504,14 @@ public class MainClass {
     private static void testRemoveDuplicates() {
         int[] nums = {
 //                1,1,1,2,2,3
-                0,0,1,1,1,1,2,3,3
+                0, 0, 1, 1, 1, 1, 2, 3, 3
         };
         System.out.print(new RemoveDuplicates().removeDuplicates(nums));
     }
 
     private static void testSearchInRotatedSortedArray() {
         int[] nums = {
-                3,0,2,2,2
+                3, 0, 2, 2, 2
         };
         int target = -1;
         System.out.println(new SearchInRotatedSortedArray().search(nums, target));
@@ -519,10 +520,36 @@ public class MainClass {
     private static void testDeleteDuplicates() {
         int[] data = {
 //                1,2,3,3,4,4,5
-                1,1,1,2,3
+                1, 1, 1, 2, 3
         };
         ListNode head = buildNodeList(data);
         printList(new RemoveDuplicatesFromList2().deleteDuplicates(head));
     }
 
+    private static void testlargestRectangleArea() {
+        int[] height = {
+                2, 1, 5, 6, 2, 3
+        };
+        System.out.println(new LargestRectangleArea().largestRectangleArea(height));
+    }
+
+    private static void testmaximalRectangle() {
+        char[][] matrix = {
+                {'1', '0', '1', '0', '0'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '1', '1', '1', '1'},
+                {'1', '0', '0', '1', '0'}
+        };
+        new MaximalRectangle().maximalRectangle(matrix);
+    }
+
+    private static void testPartitionList() {
+        int [] data = {
+             1,4,3,2,5,2
+//                3,1,2
+        };
+        int x = 3;
+        ListNode head = buildNodeList(data);
+        printList(new PartitionList().partition(head, x));
+    }
 }
