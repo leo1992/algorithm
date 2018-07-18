@@ -53,7 +53,9 @@ public class MainClass {
 //        testDeleteDuplicates();
 //        testlargestRectangleArea();
 //        testmaximalRectangle();
-        testPartitionList();
+//        testPartitionList();
+//        System.out.print("1.1.1..1.".split("\\.").length);
+        testTracerseTreeBackAndForward();
     }
 
     public static void testRoman() {
@@ -544,12 +546,22 @@ public class MainClass {
     }
 
     private static void testPartitionList() {
-        int [] data = {
-             1,4,3,2,5,2
+        int[] data = {
+                1, 4, 3, 2, 5, 2
 //                3,1,2
         };
         int x = 3;
         ListNode head = buildNodeList(data);
         printList(new PartitionList().partition(head, x));
+    }
+
+    private static void testTracerseTreeBackAndForward() {
+        int[] data = {
+                1,
+                2, 3,
+                -1, 4, 5, 6,
+                -1, -1, 7, -1, -1, 9
+        };
+        new TraversTreeBackAndForward().test(data);
     }
 }
